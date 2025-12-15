@@ -28,7 +28,7 @@ const Team: React.FC = () => {
           <div className="flex flex-col md:flex-row gap-6 bg-surface-card rounded-xl p-6 border border-border-color hover:border-primary/50 transition-colors shadow-lg">
             <div className="shrink-0">
               <img 
-                src="https://drive.google.com/uc?export=view&id=1esvrNEZkf3VoCDye9D5BSbRmjsQWZdq_" 
+                src="/images/pi.png" 
                 alt="Dr. Sebin Devasia"
                 className="rounded-lg h-48 w-48 md:h-56 md:w-56 object-cover shadow-inner mx-auto md:mx-0 block bg-surface-dark"
               />
