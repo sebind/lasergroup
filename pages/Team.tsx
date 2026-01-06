@@ -123,10 +123,10 @@ const Team: React.FC = () => {
                     <span className="material-symbols-outlined text-3xl text-text-secondary group-hover:text-purple-400">school</span>
                 </div>
               </div>
-              <h3 className="text-adaptive text-lg font-bold">Student Name</h3>
-              <p className="text-purple-400 text-sm font-medium mb-2">M.Sc Project Student</p>
+              <h3 className="text-adaptive text-lg font-bold">Thanushia</h3>
+              <p className="text-purple-400 text-sm font-medium mb-2">Masters Student (PSGCAS)</p>
               <p className="text-text-secondary text-sm leading-normal">
-                 Researching electronic properties of 2D materials.
+                 Machine Leaning for Exploration of Metal Halide Radiation Detectors.
               </p>
             </div>
              {/* Placeholder 2 */}
@@ -136,10 +136,23 @@ const Team: React.FC = () => {
                     <span className="material-symbols-outlined text-3xl text-text-secondary group-hover:text-purple-400">school</span>
                 </div>
               </div>
-              <h3 className="text-adaptive text-lg font-bold">Student Name</h3>
-              <p className="text-purple-400 text-sm font-medium mb-2">Summer Intern</p>
+              <h3 className="text-adaptive text-lg font-bold">Divya Dharshini</h3>
+              <p className="text-purple-400 text-sm font-medium mb-2">Masters Student (PSGK)</p>
               <p className="text-text-secondary text-sm leading-normal">
                  Developing machine learning models for crystal structure prediction.
+              </p>
+            </div>
+             {/* Placeholder 3 */}
+            <div className="group relative flex flex-col bg-surface-card rounded-xl p-5 border border-transparent hover:border-purple-400 hover:shadow-lg hover:shadow-purple-400/10 transition-all duration-300">
+              <div className="flex items-start justify-between mb-4">
+                <div className="flex items-center justify-center bg-surface-dark rounded-full h-16 w-16 border-2 border-background-dark group-hover:border-purple-400 transition-colors">
+                    <span className="material-symbols-outlined text-3xl text-text-secondary group-hover:text-purple-400">school</span>
+                </div>
+              </div>
+              <h3 className="text-adaptive text-lg font-bold">Dhanushmathi</h3>
+              <p className="text-purple-400 text-sm font-medium mb-2">Masters Student (PSGK)</p>
+              <p className="text-text-secondary text-sm leading-normal">
+                 Developing lead-free halide materials for Radiation detection.
               </p>
             </div>
           </div>
@@ -160,15 +173,21 @@ const Team: React.FC = () => {
                 </thead>
                 <tbody className="divide-y divide-border-color">
                   <tr className="hover:bg-surface-dark/50 transition-colors">
-                    <td className="px-6 py-4 font-medium text-adaptive">Alumni Name</td>
-                    <td className="px-6 py-4">M.Sc Student (2024)</td>
-                    <td className="px-6 py-4">Solar Cells Simulation</td>
+                    <td className="px-6 py-4 font-medium text-adaptive">Swetha</td>
+                    <td className="px-6 py-4">Masters Student (2024)</td>
+                    <td className="px-6 py-4">A Compuattional analysis of CdS for catalysis using Density functional theory</td>
                   </tr>
                   <tr className="hover:bg-surface-dark/50 transition-colors">
-                    <td className="px-6 py-4 font-medium text-adaptive">Alumni Name</td>
-                    <td className="px-6 py-4">Project Assistant (2023)</td>
-                    <td className="px-6 py-4">Perovskite Synthesis</td>
+                    <td className="px-6 py-4 font-medium text-adaptive">Kalaipriya</td>
+                    <td className="px-6 py-4">Masters Student (2024)</td>
+                    <td className="px-6 py-4">Bismuth sulfide thin films by ultasonic spray deposition</td>
                   </tr>
+                  <tr className="hover:bg-surface-dark/50 transition-colors">
+                    <td className="px-6 py-4 font-medium text-adaptive">Pavithra</td>
+                    <td className="px-6 py-4">Masters Student (2024)</td>
+                    <td className="px-6 py-4">Sprayed antimony sulfide thin films</td>
+                  </tr>
+
                 </tbody>
               </table>
             </div>
