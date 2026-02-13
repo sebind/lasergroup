@@ -15,6 +15,7 @@ interface Publication {
 }
 
 const publicationsData: Publication[] = [
+  // 2025
   {
     id: 36,
     year: 2025,
@@ -25,7 +26,7 @@ const publicationsData: Publication[] = [
     journal: 'ACS Applied Optical Materials',
     details: '3 (12), 2971-2981',
     viewLink: 'https://pubs.acs.org/doi/abs/10.1021/acsaom.5c00517',
-    pdfLink: '/pdfs/acs_applied_optical_materials_2025.pdf'
+    pdfLink: ''
   },
   {
     id: 1,
@@ -37,7 +38,7 @@ const publicationsData: Publication[] = [
     journal: 'Journal of Physics and Chemistry of Solids',
     details: 'Vol. 208, 113193',
     viewLink: 'https://www.sciencedirect.com/science/article/abs/pii/S0022369725006468',
-    pdfLink: '/pdfs/acs_applied_optical_materials_2025.pdf'
+    pdfLink: ''
 
   },
   {
@@ -433,134 +434,164 @@ const Publications: React.FC = () => {
   const [selectedType, setSelectedType] = useState('All');
 
   const filteredPublications = publicationsData.filter(pub => {
-    const matchesSearch =
-      pub.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      pub.authors.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      pub.journal.toLowerCase().includes(searchTerm.toLowerCase());
-
-    const matchesType =
-      selectedType === 'All' || pub.type === selectedType;
-
+    const matchesSearch = pub.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
+                          pub.authors.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                          pub.journal.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesType = selectedType === 'All' || pub.type === selectedType;
     return matchesSearch && matchesType;
   });
 
+  // Calculate statistics
   const journalCount = publicationsData.filter(pub => pub.type === 'Journal').length;
   const conferenceCount = publicationsData.filter(pub => pub.type === 'Conference').length;
 
+  // Group by year
   const groupedPublications = filteredPublications.reduce((acc, pub) => {
-    if (!acc[pub.year]) acc[pub.year] = [];
+    if (!acc[pub.year]) {
+      acc[pub.year] = [];
+    }
     acc[pub.year].push(pub);
     return acc;
   }, {} as Record<number, Publication[]>);
 
-  const sortedYears = Object.keys(groupedPublications)
-    .map(Number)
-    .sort((a, b) => b - a);
+  const sortedYears = Object.keys(groupedPublications).map(Number).sort((a, b) => b - a);
 
   return (
     <div className="flex flex-col flex-1 max-w-[960px] w-full mx-auto px-4 md:px-0 py-8 gap-8">
-
-      {/* Header */}
+      {/* Page Heading & Stats Section */}
       <div className="flex flex-col gap-6">
         <div className="flex items-center gap-2 text-sm text-text-secondary px-4">
           <Link to="/" className="hover:text-white transition-colors">Home</Link>
           <span className="material-symbols-outlined text-[16px]">chevron_right</span>
           <span className="text-white">Publications</span>
         </div>
-
         <div className="flex flex-wrap lg:flex-nowrap justify-between gap-8 px-4">
           <div className="flex flex-col gap-3 max-w-xl">
-            <h1 className="text-white text-4xl sm:text-5xl font-bold">
-              Group Publications
-            </h1>
-            <p className="text-text-secondary text-lg">
-              A comprehensive collection of peer-reviewed articles and conference proceedings.
+            <h1 className="text-white text-4xl sm:text-5xl font-bold leading-tight tracking-[-0.033em]">Group Publications</h1>
+            <p className="text-text-secondary text-lg font-normal leading-relaxed">
+              A comprehensive collection of our peer-reviewed articles and conference proceedings, spanning research in photovoltaics, optoelectronics, and materials science.
             </p>
           </div>
-
           <div className="flex flex-row gap-4 w-full lg:w-auto">
             <div className="flex-1 min-w-[140px] flex flex-col justify-center gap-1 rounded-lg p-5 bg-surface-card border border-border-color">
-              <span className="text-text-secondary text-sm font-medium">Journals</span>
+              <span className="text-text-secondary text-sm font-medium flex items-center gap-1">
+                <span className="material-symbols-outlined text-[18px]">auto_stories</span> Journals
+              </span>
               <p className="text-white text-3xl font-bold">{journalCount}</p>
             </div>
-
             <div className="flex-1 min-w-[140px] flex flex-col justify-center gap-1 rounded-lg p-5 bg-surface-card border border-border-color">
-              <span className="text-text-secondary text-sm font-medium">Proceedings</span>
+              <span className="text-text-secondary text-sm font-medium flex items-center gap-1">
+                <span className="material-symbols-outlined text-[18px]">co_present</span> Proceedings
+              </span>
               <p className="text-white text-3xl font-bold">{conferenceCount}</p>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Publications */}
+      {/* Sticky Controls Bar */}
+      <div className="sticky top-16 z-20 -mx-4 px-4 py-4 backdrop-blur-xl bg-background-dark/80 border-b border-border-color/50 md:rounded-b-xl">
+        <div className="flex flex-col md:flex-row gap-4 justify-between items-center">
+          <div className="w-full md:w-1/3">
+            <div className="relative group">
+              <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-text-secondary group-focus-within:text-primary transition-colors">
+                <span className="material-symbols-outlined">search</span>
+              </div>
+              <input 
+                type="text" 
+                className="block w-full p-2.5 pl-10 text-sm text-white bg-surface-card border border-transparent rounded-lg focus:ring-primary focus:border-primary placeholder-text-secondary transition-all" 
+                placeholder="Search keyword, author, or title..." 
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+              />
+            </div>
+          </div>
+          <div className="flex w-full md:w-auto overflow-x-auto gap-2 no-scrollbar pb-1 md:pb-0">
+            <button 
+              onClick={() => setSelectedType('All')}
+              className={`flex items-center gap-2 px-3 py-1.5 rounded-full border transition-colors text-sm font-medium whitespace-nowrap ${selectedType === 'All' ? 'bg-primary/20 text-primary border-primary/30' : 'bg-surface-card text-text-secondary border-transparent hover:text-white'}`}
+            >
+              All Types
+            </button>
+            <button 
+              onClick={() => setSelectedType('Journal')}
+              className={`flex items-center gap-2 px-3 py-1.5 rounded-full border transition-colors text-sm font-medium whitespace-nowrap ${selectedType === 'Journal' ? 'bg-purple-500/20 text-purple-300 border-purple-500/30' : 'bg-surface-card text-text-secondary border-transparent hover:text-white'}`}
+            >
+              Journals
+            </button>
+            <button 
+              onClick={() => setSelectedType('Conference')}
+              className={`flex items-center gap-2 px-3 py-1.5 rounded-full border transition-colors text-sm font-medium whitespace-nowrap ${selectedType === 'Conference' ? 'bg-teal-500/20 text-teal-300 border-teal-500/30' : 'bg-surface-card text-text-secondary border-transparent hover:text-white'}`}
+            >
+              Conference
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Publications List */}
       <div className="flex flex-col gap-4 px-4">
         {sortedYears.map(year => (
           <React.Fragment key={year}>
-            <div className="flex items-center gap-4 py-2 mt-4">
+            <div className="flex items-center gap-4 py-2 mt-4 first:mt-0">
               <h3 className="text-2xl font-bold text-white">{year}</h3>
               <div className="h-px bg-border-color flex-1"></div>
             </div>
 
             {groupedPublications[year].map(pub => (
-              <div key={pub.id}
-                className="group flex flex-col md:flex-row gap-6 p-6 rounded-xl bg-surface-card/40 border border-border-color">
-
+              <div key={pub.id} className="group relative flex flex-col md:flex-row gap-6 p-6 rounded-xl bg-surface-card/40 border border-border-color hover:border-primary/50 hover:bg-surface-card/60 transition-all duration-300">
                 <div className="flex-1 flex flex-col gap-3">
-                  <h3 className="text-xl font-bold text-white">
+                  <div className="flex items-center gap-3 mb-1">
+                    <span className={`px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider border ${
+                      pub.type === 'Journal' ? 'bg-purple-500/20 text-purple-300 border-purple-500/30' : 
+                      pub.type === 'Conference' ? 'bg-teal-500/20 text-teal-300 border-teal-500/30' : 
+                      'bg-orange-500/20 text-orange-300 border-orange-500/30'
+                    }`}>
+                      {pub.type}
+                    </span>
+                    <span className="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-blue-500/20 text-blue-300 border border-blue-500/30">
+                      {pub.category}
+                    </span>
+                  </div>
+                  <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors leading-snug">
                     {pub.title}
                   </h3>
-
-                  <p className="text-text-secondary text-sm">
+                  <p className="text-text-secondary text-sm leading-relaxed">
                     {pub.authors}
                   </p>
-
-                  <div className="text-sm italic text-white/80">
-                    {pub.journal} · {pub.details}
+                  <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mt-1 text-sm text-white/80 italic">
+                    <span className="font-semibold text-white/90">{pub.journal}</span>
+                    <span className="w-1 h-1 rounded-full bg-text-secondary"></span>
+                    <span>{pub.details}</span>
                   </div>
                 </div>
-
-                {/* ACTION BUTTONS */}
-                <div className="flex md:flex-col gap-3 min-w-[120px] pt-4 md:pt-0 border-t md:border-t-0 md:border-l border-border-color md:pl-6">
-
-                  {pub.viewLink ? (
-                    <a
-                      href={pub.viewLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-sm font-medium text-white hover:text-primary"
-                    >
-                      <span className="material-symbols-outlined">link</span>
-                      View
+                <div className="flex md:flex-col items-center md:items-end justify-start md:justify-center gap-3 min-w-[120px] pt-4 md:pt-0 border-t md:border-t-0 md:border-l border-border-color md:pl-6">
+                  {pub.link ? (
+                    <a href={pub.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-medium text-white hover:text-primary transition-colors">
+                      <span className="material-symbols-outlined text-[20px]">link</span> View
                     </a>
                   ) : (
-                    <span className="flex items-center gap-2 text-sm text-text-secondary">
-                      <span className="material-symbols-outlined">link_off</span>
-                      View
-                    </span>
+                    <button className="flex items-center gap-2 text-sm font-medium text-white hover:text-primary transition-colors cursor-default">
+                      <span className="material-symbols-outlined text-[20px]">description</span> View
+                    </button>
                   )}
-
-                  {pub.pdfLink ? (
-                    <a
-                      href={pub.pdfLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-sm font-medium text-white hover:text-primary"
-                    >
-                      <span className="material-symbols-outlined">picture_as_pdf</span>
-                      PDF
-                    </a>
-                  ) : (
-                    <span className="flex items-center gap-2 text-sm text-text-secondary">
-                      <span className="material-symbols-outlined">picture_as_pdf</span>
-                      PDF
-                    </span>
+                  {pub.type === 'Journal' && (
+                    <button className="flex items-center gap-2 text-sm font-medium text-white hover:text-primary transition-colors">
+                      <span className="material-symbols-outlined text-[20px]">picture_as_pdf</span> PDF
+                    </button>
                   )}
-
                 </div>
               </div>
             ))}
           </React.Fragment>
         ))}
+      </div>
+      
+      {/* Pagination */}
+      <div className="flex justify-center pt-8 pb-16">
+        <button className="flex items-center gap-2 px-6 py-3 rounded-lg bg-surface-card hover:bg-surface-card/80 text-white font-bold transition-all border border-transparent hover:border-primary/50">
+          <span>End of List</span>
+        </button>
       </div>
     </div>
   );
