@@ -199,7 +199,6 @@ const publicationsData: Publication[] = [
     journal: 'Optik (Stuttg).',
     details: 'Vol. 241, 166878',
     viewLink: 'https://www.sciencedirect.com/science/article/pii/S0030402621005805'
-    pdfLink: '/pdfs/'
   },
   {
     id: 15,
