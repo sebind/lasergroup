@@ -25,6 +25,8 @@ const publicationsData: Publication[] = [
     authors: 'Thazhathenair, A., Prakash, O., Devasia, S., Robert, G., Kalathingal, F. T., Singh, U. B., & Ghosh, S.',
     journal: 'ACS Applied Optical Materials',
     details: '',
+    viewLink: 'https://pubs.acs.org/doi/10.1021/acsapm.5c01266',
+    pdfLink: 'https://pubs.acs.org/doi/pdf/10.1021/acsapm.5c01266',
   },
   {
     id: 1,
@@ -35,6 +37,8 @@ const publicationsData: Publication[] = [
     authors: 'MK Jyolsna Raj, Kallol Mohanta, S. Devasia, B Geetha Priyadarshini',
     journal: 'Journal of Physics and Chemistry of Solids',
     details: 'Vol. 208, 113193',
+    viewLink: 'https://www.sciencedirect.com/science/article/pii/S0022369725002870',
+    pdfLink: 'https://www.sciencedirect.com/science/article/pii/S0022369725002870/pdfft',
   },
   {
     id: 2,
@@ -45,6 +49,8 @@ const publicationsData: Publication[] = [
     authors: 'A Das, S. Devasia, Nisha Banerjee, RG Nair',
     journal: 'Applied Surface Science',
     details: '699, 163160',
+    viewLink: 'https://www.sciencedirect.com/science/article/pii/S0169433225006726',
+    pdfLink: 'https://www.sciencedirect.com/science/article/pii/S0169433225006726/pdfft',
   },
   // 2024
   {
@@ -56,6 +62,8 @@ const publicationsData: Publication[] = [
     authors: 'SK Nikhil, GR Nair, A Das, S. Devasia, RG Nair',
     journal: 'Advanced Powder Technology',
     details: 'Vol. 35 (11), 104683',
+    viewLink: 'https://www.sciencedirect.com/science/article/pii/S0921883124006823',
+    pdfLink: 'https://www.sciencedirect.com/science/article/pii/S0921883124006823/pdfft',
   },
   {
     id: 4,
@@ -66,6 +74,8 @@ const publicationsData: Publication[] = [
     authors: 'John N., Davis N., Roshan J.C., Hussain S., S. Devasia, Srinivasan B., Ashok A.M.',
     journal: 'Ceramics International',
     details: 'Vol. 50 (22), 45251-45262',
+    viewLink: 'https://www.sciencedirect.com/science/article/pii/S0272884224020774',
+    pdfLink: 'https://www.sciencedirect.com/science/article/pii/S0272884224020774/pdfft',
   },
   {
     id: 5,
@@ -76,6 +86,8 @@ const publicationsData: Publication[] = [
     authors: 'R Raphael, S. Devasia, S. Shaji, E.I. Anila',
     journal: 'Sensors and Actuators A: Physical',
     details: 'Vol. 376, 115546',
+    viewLink: 'https://www.sciencedirect.com/science/article/pii/S0924424724007294',
+    pdfLink: 'https://www.sciencedirect.com/science/article/pii/S0924424724007294/pdfft',
   },
   {
     id: 6,
@@ -86,6 +98,8 @@ const publicationsData: Publication[] = [
     authors: 'S. Devasia, S. Shaji, D.A. Avellaneda, J.A. Aguilar Martinez, B. Krishnan',
     journal: 'Optical Materials',
     details: 'Vol. 152, 115532',
+    viewLink: 'https://www.sciencedirect.com/science/article/pii/S0925346724003919',
+    pdfLink: 'https://www.sciencedirect.com/science/article/pii/S0925346724003919/pdfft',
   },
   // 2023
   {
@@ -97,6 +111,8 @@ const publicationsData: Publication[] = [
     authors: 'S. Devasia, S. Shaji, D.A. Avellaneda, J.A. Aguilar Martinez, B. Krishnan',
     journal: 'Mater. Chem. Phys.',
     details: 'Vol. 296, 127295',
+    viewLink: 'https://www.sciencedirect.com/science/article/pii/S025405842300066X',
+    pdfLink: 'https://www.sciencedirect.com/science/article/pii/S025405842300066X/pdfft',
   },
   // 2022
   {
@@ -393,10 +409,6 @@ const Publications: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedType, setSelectedType] = useState('All');
 
-  const getViewLink = (pub: Publication) => pub.viewLink || `https://scholar.google.com/scholar?q=${encodeURIComponent(pub.title)}`;
-
-  const getPdfLink = (pub: Publication) => pub.pdfLink || `https://www.google.com/search?q=${encodeURIComponent(`${pub.title} filetype:pdf`)}`;
-
   const filteredPublications = publicationsData.filter(pub => {
     const matchesSearch = pub.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
                           pub.authors.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -530,13 +542,25 @@ const Publications: React.FC = () => {
                   </div>
                 </div>
                 <div className="flex md:flex-col items-center md:items-end justify-start md:justify-center gap-3 min-w-[120px] pt-4 md:pt-0 border-t md:border-t-0 md:border-l border-border-color md:pl-6">
-                  <a href={getViewLink(pub)} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-medium text-white hover:text-primary transition-colors">
-                    <span className="material-symbols-outlined text-[20px]">link</span> View
-                  </a>
-                  {pub.type === 'Journal' && (
-                    <a href={getPdfLink(pub)} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-medium text-white hover:text-primary transition-colors">
-                      <span className="material-symbols-outlined text-[20px]">picture_as_pdf</span> PDF
+                  {pub.viewLink ? (
+                    <a href={pub.viewLink} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-medium text-white hover:text-primary transition-colors">
+                      <span className="material-symbols-outlined text-[20px]">link</span> View
                     </a>
+                  ) : (
+                    <span className="flex items-center gap-2 text-sm font-medium text-text-secondary/70">
+                      <span className="material-symbols-outlined text-[20px]">link_off</span> View
+                    </span>
+                  )}
+                  {pub.type === 'Journal' && (
+                    pub.pdfLink ? (
+                      <a href={pub.pdfLink} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-medium text-white hover:text-primary transition-colors">
+                        <span className="material-symbols-outlined text-[20px]">picture_as_pdf</span> PDF
+                      </a>
+                    ) : (
+                      <span className="flex items-center gap-2 text-sm font-medium text-text-secondary/70">
+                        <span className="material-symbols-outlined text-[20px]">picture_as_pdf</span> PDF
+                      </span>
+                    )
                   )}
                 </div>
               </div>
