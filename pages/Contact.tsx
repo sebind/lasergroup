@@ -43,8 +43,8 @@ const Contact: React.FC = () => {
                 </div>
                 <div className="flex flex-col justify-center">
                   <p className="text-white text-base font-medium leading-normal">General Inquiries</p>
-                  <a href="mailto:sebin@psgitech.ac.in" className="text-[#9dabb9] text-sm font-normal leading-normal truncate hover:text-primary transition-colors">
-                    sebin@psgitech.ac.in
+                  <a href="mailto:seb@psgias.ac.in" className="text-[#9dabb9] text-sm font-normal leading-normal truncate hover:text-primary transition-colors">
+                    seb@psgias.ac.in
                   </a>
                 </div>
               </div>
@@ -91,10 +91,10 @@ const Contact: React.FC = () => {
                   const interest = (form.elements.namedItem('interest') as HTMLSelectElement).value;
                   const message = (form.elements.namedItem('message') as HTMLTextAreaElement).value;
                   
-                  const subject = `Inquiry from LASER Website: ${interest}`;
-                  const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0AInterest: ${interest}%0D%0A%0D%0AMessage:%0D%0A${message}`;
-                  
-                  window.location.href = `mailto:sebin@psgitech.ac.in?subject=${subject}&body=${body}`;
+                  const subject = encodeURIComponent(`Inquiry from LASER Website: ${interest}`);
+                  const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nInterest: ${interest}\n\nMessage:\n${message}`);
+
+                  window.location.href = `mailto:seb@psgias.ac.in?subject=${subject}&body=${body}`;
                 }}
               >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
