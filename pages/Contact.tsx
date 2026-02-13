@@ -3,7 +3,7 @@ import React from 'react';
 const Contact: React.FC = () => {
   return (
     <div className="flex flex-col flex-1 justify-center py-5">
-      <div className="layout-content-container flex flex-col max-w-[960px] flex-1 px-4 md:px-10 lg:px-40 mx-auto w-full">
+      <div className="layout-content-container flex flex-col max-w-[960px] flex-1 px-4 md:px-10 mx-auto w-full">
         {/* Page Heading */}
         <div className="flex flex-wrap justify-between gap-3 p-4">
           <div className="flex min-w-72 flex-col gap-3">
