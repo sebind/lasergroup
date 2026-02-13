@@ -23,8 +23,8 @@ const publicationsData: Publication[] = [
     title: 'Surface-Roughened Silver Wires with Uniformly Distributed Plasmonic Hotspots for Highly Sensitive Surface-Enhanced Raman Scattering Applications',
     authors: 'Thazhathenair, A., Prakash, O., Devasia, S., Robert, G., Kalathingal, F. T., Singh, U. B., & Ghosh, S.',
     journal: 'ACS Applied Optical Materials',
-    details: '',
-    viewLink: 'https://doi.org/',
+    details: '3 (12), 2971-2981',
+    viewLink: 'https://pubs.acs.org/doi/abs/10.1021/acsaom.5c00517',
     pdfLink: '/pdfs/acs_applied_optical_materials_2025.pdf'
   },
   {
@@ -36,6 +36,9 @@ const publicationsData: Publication[] = [
     authors: 'MK Jyolsna Raj, Kallol Mohanta, S. Devasia, B Geetha Priyadarshini',
     journal: 'Journal of Physics and Chemistry of Solids',
     details: 'Vol. 208, 113193',
+    viewLink: 'https://www.sciencedirect.com/science/article/abs/pii/S0022369725006468',
+    pdfLink: '/pdfs/acs_applied_optical_materials_2025.pdf'
+
   },
   {
     id: 2,
@@ -46,6 +49,8 @@ const publicationsData: Publication[] = [
     authors: 'A Das, S. Devasia, Nisha Banerjee, RG Nair',
     journal: 'Applied Surface Science',
     details: '699, 163160',
+    viewLink: 'https://www.sciencedirect.com/science/article/pii/S0169433225008748',
+    pdfLink: '/pdfs/acs_applied_optical_materials_2025.pdf'
   },
   // 2024
   {
@@ -57,6 +62,8 @@ const publicationsData: Publication[] = [
     authors: 'SK Nikhil, GR Nair, A Das, S. Devasia, RG Nair',
     journal: 'Advanced Powder Technology',
     details: 'Vol. 35 (11), 104683',
+    viewLink: 'https://www.sciencedirect.com/science/article/abs/pii/S0921883124003595',
+    pdfLink: '/pdfs/'
   },
   {
     id: 4,
@@ -67,6 +74,8 @@ const publicationsData: Publication[] = [
     authors: 'John N., Davis N., Roshan J.C., Hussain S., S. Devasia, Srinivasan B., Ashok A.M.',
     journal: 'Ceramics International',
     details: 'Vol. 50 (22), 45251-45262',
+    viewLink: 'https://www.sciencedirect.com/science/article/abs/pii/S0272884224038239',
+    pdfLink: '/pdfs/'
   },
   {
     id: 5,
@@ -77,6 +86,8 @@ const publicationsData: Publication[] = [
     authors: 'R Raphael, S. Devasia, S. Shaji, E.I. Anila',
     journal: 'Sensors and Actuators A: Physical',
     details: 'Vol. 376, 115546',
+    viewLink: 'https://www.sciencedirect.com/science/article/pii/S0924424724005405',
+    pdfLink: '/pdfs/'
   },
   {
     id: 6,
@@ -87,6 +98,8 @@ const publicationsData: Publication[] = [
     authors: 'S. Devasia, S. Shaji, D.A. Avellaneda, J.A. Aguilar Martinez, B. Krishnan',
     journal: 'Optical Materials',
     details: 'Vol. 152, 115532',
+    viewLink: 'https://www.sciencedirect.com/science/article/abs/pii/S0925346724007158',
+    pdfLink: '/pdfs/'
   },
   // 2023
   {
@@ -98,6 +111,8 @@ const publicationsData: Publication[] = [
     authors: 'S. Devasia, S. Shaji, D.A. Avellaneda, J.A. Aguilar Martinez, B. Krishnan',
     journal: 'Mater. Chem. Phys.',
     details: 'Vol. 296, 127295',
+    viewLink: 'https://www.sciencedirect.com/science/article/abs/pii/S0254058423000032',
+    pdfLink: '/pdfs/'
   },
   // 2022
   {
@@ -109,6 +124,8 @@ const publicationsData: Publication[] = [
     authors: 'R. Raphael, S. Devasia, S. Shaji, E.I. Anila',
     journal: 'Optical Materials',
     details: 'Vol. 133, 112915',
+    viewLink: 'https://www.sciencedirect.com/science/article/abs/pii/S0925346722009491',
+    pdfLink: '/pdfs/'
   },
   {
     id: 9,
@@ -119,6 +136,8 @@ const publicationsData: Publication[] = [
     authors: 'Sebin Devasia, S. Shaji, D. A. Avellaneda, J. A. Aguilar Martinez, B. Krishnan',
     journal: 'XV International Conference on Surfaces, Materials and Vacuum',
     details: 'Puerto Vallarta, Mexico, 26-29 Sep 2022 (Oral)',
+    viewLink: '',
+    pdfLink: '/pdfs/'
   },
   {
     id: 10,
@@ -129,6 +148,8 @@ const publicationsData: Publication[] = [
     authors: 'Sebin Devasia, S. Shaji, D. A. Avellaneda, J. A. Aguilar Martinez, B. Krishnan',
     journal: 'XXX International Materials Research Congress (IMRC)',
     details: 'Cancun, Mexico, 14-19 Aug 2022 (Oral)',
+    viewLink: '',
+    pdfLink: '/pdfs/'
   },
   // 2021
   {
@@ -140,6 +161,8 @@ const publicationsData: Publication[] = [
     authors: 'S. Devasia, S. Shaji, D.A. Avellaneda, J.A.A. Martinez, B. Krishnan',
     journal: 'J. Alloys Compd.',
     details: 'Vol. 893, 162294',
+    viewLink: 'https://www.sciencedirect.com/science/article/abs/pii/S092583882103704X',
+    pdfLink: '/pdfs/'
   },
   {
     id: 12,
@@ -150,6 +173,8 @@ const publicationsData: Publication[] = [
     authors: 'A. Nadukkandy, S. Devasia, P. Abraham, S. Shaji, D.A. Avellaneda, J.A. Aguilar-Martínez et al.',
     journal: 'Mater. Sci. Semicond. Process.',
     details: 'Vol. 135, 106074',
+    viewLink: 'https://www.sciencedirect.com/science/article/pii/S1369800121004194',
+    pdfLink: '/pdfs/'
   },
   {
     id: 13,
@@ -160,6 +185,8 @@ const publicationsData: Publication[] = [
     authors: 'A.A. Ramachandran, B. Krishnan, S. Devasia, D.A. Avellaneda, M.I. Mendivil Palma et al.',
     journal: 'Mater. Res. Bull.',
     details: 'Vol. 142, 111382',
+    viewLink: 'https://www.sciencedirect.com/science/article/abs/pii/S0025540821001793',
+    pdfLink: '/pdfs/'
   },
   {
     id: 14,
@@ -170,6 +197,8 @@ const publicationsData: Publication[] = [
     authors: 'J. Mathew, S. Devasia, S. Shaji, E.I. Anila',
     journal: 'Optik (Stuttg).',
     details: 'Vol. 241, 166878',
+    viewLink: 'https://www.sciencedirect.com/science/article/pii/S0030402621005805'
+    pdfLink: '/pdfs/'
   },
   {
     id: 15,
@@ -180,6 +209,8 @@ const publicationsData: Publication[] = [
     authors: 'S. Devasia, P.V. Athma, Rakhy Raphael, E.I. Anila',
     journal: 'Materials Today: Proceedings',
     details: 'ISSN 2214-7853',
+    viewLink: 'https://www.sciencedirect.com/science/article/abs/pii/S2214785321067109'
+    pdfLink: '/pdfs/'
   },
   {
     id: 16,
@@ -190,6 +221,8 @@ const publicationsData: Publication[] = [
     authors: 'Sebin Devasia, S. Shaji, D. A. Avellaneda, J. A. Aguilar Martinez, B. Krishnan',
     journal: 'XXIX International Materials Research Congress (IMRC)',
     details: 'Cancun, Mexico, 15-19 Aug 2021 (Oral)',
+    viewLink: 'https://www.sciencedirect.com/science/article/pii/S0030402621005805'
+    pdfLink: '/pdfs/'
   },
   {
     id: 17,
@@ -211,6 +244,8 @@ const publicationsData: Publication[] = [
     authors: 'S. Devasia, S. Shaji, D.A. Avellaneda, J.A.A. Martinez, B. Krishnan',
     journal: 'J. Alloys Compd.',
     details: 'Vol. 827, 154256',
+    viewLink: 'https://www.sciencedirect.com/science/article/abs/pii/S0925838820306198'
+    pdfLink: '/pdfs/'
   },
   {
     id: 19,
@@ -242,6 +277,8 @@ const publicationsData: Publication[] = [
     authors: 'P. J. Joffy, V. G. Sreeja, S. Devasia, E. I. Anila',
     journal: 'Solid State Sci.',
     details: 'Vol. 96, 105947',
+    viewLink: ''
+    pdfLink: '/pdfs/'
   },
   {
     id: 22,
