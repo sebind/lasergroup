@@ -210,7 +210,6 @@ const publicationsData: Publication[] = [
     journal: 'Materials Today: Proceedings',
     details: 'ISSN 2214-7853',
     viewLink: 'https://www.sciencedirect.com/science/article/abs/pii/S2214785321067109'
-    pdfLink: '/pdfs/'
   },
   {
     id: 16,
@@ -222,7 +221,6 @@ const publicationsData: Publication[] = [
     journal: 'XXIX International Materials Research Congress (IMRC)',
     details: 'Cancun, Mexico, 15-19 Aug 2021 (Oral)',
     viewLink: 'https://www.sciencedirect.com/science/article/pii/S0030402621005805'
-    pdfLink: '/pdfs/'
   },
   {
     id: 17,
@@ -245,7 +243,6 @@ const publicationsData: Publication[] = [
     journal: 'J. Alloys Compd.',
     details: 'Vol. 827, 154256',
     viewLink: 'https://www.sciencedirect.com/science/article/abs/pii/S0925838820306198'
-    pdfLink: '/pdfs/'
   },
   {
     id: 19,
@@ -278,7 +275,6 @@ const publicationsData: Publication[] = [
     journal: 'Solid State Sci.',
     details: 'Vol. 96, 105947',
     viewLink: ''
-    pdfLink: '/pdfs/'
   },
   {
     id: 22,
