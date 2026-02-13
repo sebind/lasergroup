@@ -10,7 +10,8 @@ interface Publication {
   authors: string;
   journal: string;
   details: string;
-  link?: string;
+  viewLink?: string;
+  pdfLink?: string;
 }
 
 const publicationsData: Publication[] = [
@@ -392,6 +393,10 @@ const Publications: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedType, setSelectedType] = useState('All');
 
+  const getViewLink = (pub: Publication) => pub.viewLink || `https://scholar.google.com/scholar?q=${encodeURIComponent(pub.title)}`;
+
+  const getPdfLink = (pub: Publication) => pub.pdfLink || `https://www.google.com/search?q=${encodeURIComponent(`${pub.title} filetype:pdf`)}`;
+
   const filteredPublications = publicationsData.filter(pub => {
     const matchesSearch = pub.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
                           pub.authors.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -525,19 +530,13 @@ const Publications: React.FC = () => {
                   </div>
                 </div>
                 <div className="flex md:flex-col items-center md:items-end justify-start md:justify-center gap-3 min-w-[120px] pt-4 md:pt-0 border-t md:border-t-0 md:border-l border-border-color md:pl-6">
-                  {pub.link ? (
-                    <a href={pub.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-medium text-white hover:text-primary transition-colors">
-                      <span className="material-symbols-outlined text-[20px]">link</span> View
-                    </a>
-                  ) : (
-                    <button className="flex items-center gap-2 text-sm font-medium text-white hover:text-primary transition-colors cursor-default">
-                      <span className="material-symbols-outlined text-[20px]">description</span> View
-                    </button>
-                  )}
+                  <a href={getViewLink(pub)} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-medium text-white hover:text-primary transition-colors">
+                    <span className="material-symbols-outlined text-[20px]">link</span> View
+                  </a>
                   {pub.type === 'Journal' && (
-                    <button className="flex items-center gap-2 text-sm font-medium text-white hover:text-primary transition-colors">
+                    <a href={getPdfLink(pub)} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-medium text-white hover:text-primary transition-colors">
                       <span className="material-symbols-outlined text-[20px]">picture_as_pdf</span> PDF
-                    </button>
+                    </a>
                   )}
                 </div>
               </div>
