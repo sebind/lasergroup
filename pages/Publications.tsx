@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 interface Publication {
   id: number;
   year: number;
-  type: 'Journal' | 'Conference' | 'Patent';
+  type: 'Journal' | 'Conference';
   category: string;
   title: string;
   authors: string;
