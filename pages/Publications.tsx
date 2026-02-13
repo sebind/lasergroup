@@ -462,7 +462,7 @@ const Publications: React.FC = () => {
         </div>
         <div className="flex flex-wrap lg:flex-nowrap justify-between gap-8 px-4">
           <div className="flex flex-col gap-3 max-w-xl">
-            <h1 className="text-white text-4xl sm:text-5xl font-bold leading-tight tracking-[-0.033em]">Group Publications</h1>
+            <h1 className="text-white text-4xl sm:text-5xl font-bold leading-tight tracking-[-0.033em]">Publications</h1>
             <p className="text-text-secondary text-lg font-normal leading-relaxed">
               A comprehensive collection of our peer-reviewed articles and conference proceedings, spanning research in photovoltaics, optoelectronics, and materials science.
             </p>
