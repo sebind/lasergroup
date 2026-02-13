@@ -566,9 +566,9 @@ const Publications: React.FC = () => {
                   </div>
                 </div>
                 <div className="flex md:flex-col items-center md:items-end justify-start md:justify-center gap-3 min-w-[120px] pt-4 md:pt-0 border-t md:border-t-0 md:border-l border-border-color md:pl-6">
-                  {pub.link ? (
-                    <a href={pub.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-medium text-white hover:text-primary transition-colors">
-                      <span className="material-symbols-outlined text-[20px]">link</span> View
+                  {pub.viewLink ? (
+                    <a href={pub.viewLink} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-medium text-white hover:text-primary transition-colors">
+                      <span className="material-symbols-outlined text-[20px]">viewLink</span> View
                     </a>
                   ) : (
                     <button className="flex items-center gap-2 text-sm font-medium text-white hover:text-primary transition-colors cursor-default">
