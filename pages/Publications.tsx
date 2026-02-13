@@ -23,7 +23,7 @@ const publicationsData: Publication[] = [
     title: 'Surface-Roughened Silver Wires with Uniformly Distributed Plasmonic Hotspots for Highly Sensitive Surface-Enhanced Raman Scattering Applications',
     authors: 'Thazhathenair, A., Prakash, O., Devasia, S., Robert, G., Kalathingal, F. T., Singh, U. B., & Ghosh, S.',
     journal: 'ACS Applied Optical Materials',
-    details: '2025',
+    details: '',
   },
   {
     id: 1,
@@ -43,7 +43,7 @@ const publicationsData: Publication[] = [
     title: 'High Aspect Ratio ZnO Nanorods for Improved Photoelectrochemical (PEC) Water Splitting Performances and Efficient Photocatalytic Hydrogen Evolution: An Integrated Experimental and DFT Studies',
     authors: 'A Das, S. Devasia, Nisha Banerjee, RG Nair',
     journal: 'Applied Surface Science',
-    details: 'Accepted',
+    details: '699, 163160',
   },
   // 2024
   {

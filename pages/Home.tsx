@@ -21,7 +21,7 @@ const Home: React.FC = () => {
               <span className="text-xs font-medium text-white uppercase tracking-wider">Advancing Materials Science</span>
             </div>
             <h1 className="text-white text-4xl sm:text-5xl md:text-6xl font-black leading-tight tracking-[-0.033em]">
-              Laboratory for Advanced <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-[#60a5fa]">Simulations & Energy</span> Research
+              Laboratory for Advanced <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-[#60a5fa]">Simulations & Energy materials</span> Research
             </h1>
             <h2 className="text-gray-300 text-lg sm:text-xl font-light leading-relaxed max-w-[720px] mx-auto">
               The LASER Group combines computational techniques with experimental research to discover novel materials for next-generation devices.

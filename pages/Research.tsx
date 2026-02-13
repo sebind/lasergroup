@@ -92,15 +92,15 @@ const Research: React.FC = () => {
                     <li className="flex gap-3 items-start group cursor-pointer">
                       <span className="material-symbols-outlined text-primary text-[20px] mt-0.5">description</span>
                       <div>
-                        <p className="text-sm font-semibold text-slate-200 group-hover:text-primary transition-colors">Bandgap engineering in 2D Transition Metal Dichalcogenides</p>
-                        <p className="text-xs text-slate-500">Physical Review B, 2023</p>
+                        <p className="text-sm font-semibold text-slate-200 group-hover:text-primary transition-colors">Surface-Roughened Silver Wires with Uniformly Distributed Plasmonic Hotspots for Highly Sensitive Surface-Enhanced Raman Scattering Applications</p>
+                        <p className="text-xs text-slate-500">ACS Applied Optical Materials, 2025</p>
                       </div>
                     </li>
                     <li className="flex gap-3 items-start group cursor-pointer">
                       <span className="material-symbols-outlined text-primary text-[20px] mt-0.5">description</span>
                       <div>
-                        <p className="text-sm font-semibold text-slate-200 group-hover:text-primary transition-colors">Ab initio study of perovskite stability under pressure</p>
-                        <p className="text-xs text-slate-500">Nature Materials, 2022</p>
+                        <p className="text-sm font-semibold text-slate-200 group-hover:text-primary transition-colors">High Aspect Ratio ZnO Nanorods for Improved Photoelectrochemical (PEC) Water Splitting Performances and Efficient Photocatalytic Hydrogen Evolution: An Integrated Experimental and DFT Studies</p>
+                        <p className="text-xs text-slate-500">Applied Surface Science, 2025</p>
                       </div>
                     </li>
                   </ul>
@@ -148,8 +148,8 @@ const Research: React.FC = () => {
                     <li className="flex gap-3 items-start group cursor-pointer">
                       <span className="material-symbols-outlined text-purple-400 text-[20px] mt-0.5">description</span>
                       <div>
-                        <p className="text-sm font-semibold text-slate-200 group-hover:text-purple-400 transition-colors">Generative models for inverse material design</p>
-                        <p className="text-xs text-slate-500">Science Advances, 2023</p>
+                        <p className="text-sm font-semibold text-slate-200 group-hover:text-purple-400 transition-colors"> </p>
+                        <p className="text-xs text-slate-500">, </p>
                       </div>
                     </li>
                   </ul>
@@ -179,8 +179,8 @@ const Research: React.FC = () => {
                     <li className="flex gap-3 items-start group cursor-pointer">
                       <span className="material-symbols-outlined text-amber-400 text-[20px] mt-0.5">description</span>
                       <div>
-                        <p className="text-sm font-semibold text-slate-200 group-hover:text-amber-400 transition-colors">Ultra-sensitive photodetectors based on MoS2/Graphene</p>
-                        <p className="text-xs text-slate-500">Nature Electronics, 2022</p>
+                        <p className="text-sm font-semibold text-slate-200 group-hover:text-amber-400 transition-colors">Ultrasonically sprayed Cs3Bi2I9 thin film based self-powered photodetector</p>
+                        <p className="text-xs text-slate-500">Materials Chemistry & Physics, 2023</p>
                       </div>
                     </li>
                   </ul>
